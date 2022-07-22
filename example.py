@@ -9,8 +9,8 @@ from keras.preprocessing import image
 import firebase_admin
 from firebase_admin import credentials,db
 
-databaseURL="https://gardage-classification-default-rtdb.firebaseio.com"
-cred = credentials.Certificate("garbage-classification-firebase.json")
+databaseURL="Use your firebase URL"
+cred = credentials.Certificate("GIVE DB Name followed by.json")
 default_app=firebase=firebase_admin.initialize_app(cred,{
 	'databaseURL':databaseURL
 	})
@@ -22,6 +22,7 @@ def on_press(key):
         print('key pressed')
         camera = PiCamera()
         camera.start_preview()
+	#add the path acordingly
         camera.capture('/home/pi/Desktop/ML/image.jpg')
         print(file_exists('/home/pi/Desktop/ML/image.jpg'))
         if(file_exists('/home/pi/Desktop/ML/image.jpg')):
